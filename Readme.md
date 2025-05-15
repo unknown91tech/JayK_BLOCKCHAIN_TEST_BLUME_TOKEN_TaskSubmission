@@ -142,6 +142,19 @@ The smart contracts include comprehensive test suites for:
 - Gas optimization
 - Price oracle integrity
 
+
+### Running Individual Scripts
+
+You can run specific test suites to check individual contract functionality:
+
+For example:
+
+```bash
+# Run token tests
+npx hardhat run scripts/test/eco=system.js --network hoodi
+
+```
+
 ### Running Individual Tests
 
 You can run specific test suites to check individual contract functionality:
