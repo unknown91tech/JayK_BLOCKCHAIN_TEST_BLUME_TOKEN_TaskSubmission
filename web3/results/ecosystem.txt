@@ -1,0 +1,323 @@
+D:\uniquecrypto\test1 - Copy (master) (test1@1.0.0)
+λ npx hardhat run scripts/test/eco-system.js --network hoodi
+Initializing Blume Ecosystem with account: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+
+⚡ QUICK SETUP
+==============================
+� SETTING UP PRICE ORACLE
+==================================================
+Setting BLX price to $10.00...
+BLX price set to $10.00 (tx: 0xae87f9541aa91dc5a62a6615522825fce9cd7387238540eac2c73c70e268f007)
+✓ BLX price set to $10.00 confirmed (gas used: 33306)
+
+Setting WETH price to $3000.00...
+WETH price set to $3000.00 (tx: 0xec95ea2930a35823ce6be9b78b7e0de5208840aaf9fb7089837d1c9d06e6a58b)
+✓ WETH price set to $3000.00 confirmed (gas used: 33318)
+
+BLX price: $10.0
+WETH price: $3000.0
+Setting price oracle for BLX-WETH pair...
+Price oracle set for pair (tx: 0x73e498e66465e93a80ce9dea837531a8777710247cac50257bcffd79f0f303c1)
+✓ Price oracle set for pair confirmed (gas used: 25116)
+
+Setting max price deviation to 50%...
+⚠️ Could not set max price deviation: execution reverted: BlumeSwap: DEVIATION_TOO_HIGH
+Minting 10000 BLX tokens...
+Minted 10000 BLX tokens (tx: 0xb970249717ea8ea4ef33dba050088bc2d99b29dccd1ebe36ee7203850f52f405)
+✓ Minted 10000 BLX tokens confirmed (gas used: 39602)
+
+✅ User excluded from limits
+✅ Quick setup complete!
+
+� BLUME ECOSYSTEM COMPREHENSIVE TEST
+User: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+================================================================================
+
+1. Price Oracle Setup
+--------------------------------------------------
+� SETTING UP PRICE ORACLE
+==================================================
+Setting BLX price to $10.00...
+BLX price set to $10.00 (tx: 0xcf1ee3d31503eac3bc1f88005a1755b0e5bf3e76d67914a7e5e2364ff7920feb)
+✓ BLX price set to $10.00 confirmed (gas used: 33306)
+
+Setting WETH price to $3000.00...
+WETH price set to $3000.00 (tx: 0xecfea358972139715e478ec1107cc20b8c20f220bb0dd98143ab27470453d2b0)
+✓ WETH price set to $3000.00 confirmed (gas used: 33318)
+
+BLX price: $10.0
+WETH price: $3000.0
+Setting price oracle for BLX-WETH pair...
+Price oracle set for pair (tx: 0x2b6a787b53e9059f58968e57c7ad159f93b17ce1ac6295ef761c54353017df52)
+✓ Price oracle set for pair confirmed (gas used: 25116)
+
+Setting max price deviation to 50%...
+⚠️ Could not set max price deviation: execution reverted: BlumeSwap: DEVIATION_TOO_HIGH
+✅ Price Oracle Setup - PASSED
+
+2. Token Information
+--------------------------------------------------
+� Token Information:
+Name: BLUME TOKEN
+Symbol: BLX
+Decimals: 18n
+Total Supply: 2040021000031000.00000001 BLX
+Max TX Amount: 2000000.0 BLX
+Max Wallet Balance: 3000000.0 BLX
+Cooldown Time: 30 seconds
+✅ Token Information - PASSED
+
+3. Factory Information
+--------------------------------------------------
+
+� Factory Information
+------------------------------
+Total pairs: 1
+Protocol fee: 50bp (0.5%)
+Fee receiver: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+✅ Factory Information - PASSED
+
+4. Token Minting
+--------------------------------------------------
+Minting 10000 BLX tokens...
+Minted 10000 BLX tokens (tx: 0xc0e0d8044efb305408914ce3748b73cd610f022e903ac48d2a85afb0898861b0)
+✓ Minted 10000 BLX tokens confirmed (gas used: 39602)
+
+✅ Token Minting - PASSED
+
+5. Balance Check
+--------------------------------------------------
+BLX Balance: 1010008992998747.834804981700041281 BLX
+✅ Balance Check - PASSED
+
+6. Add Liquidity
+--------------------------------------------------
+Adding liquidity: 100 BLX + 0.03333 ETH...
+Approving 200 BLX for 0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4...
+Approved 200 BLX (tx: 0x1bb16c5e23358c7cb0e1bf33b662a3092164f591135b36d4c1cd744f32367b56)
+✓ Approved 200 BLX confirmed (gas used: 29910)
+
+Added liquidity: 100 BLX + 0.03333 ETH (tx: 0xc389b5a72175b28c7deb02bf01210d5fef41e4805161c679ea77cb6ce26d5d41)
+✓ Added liquidity: 100 BLX + 0.03333 ETH confirmed (gas used: 150049)
+
+✅ Add Liquidity - PASSED
+
+7. Pool Reserves Check
+--------------------------------------------------
+Pool Reserves:
+  Reserve0: 0.0
+  Reserve1: 0.0
+  WETH: 0.0
+  BLX: 0.0
+✅ Pool Reserves Check - PASSED
+
+8. Swap ETH for BLX
+--------------------------------------------------
+Swapping 0.01 ETH for at least 0 BLX...
+Swapped 0.01 ETH for BLX (tx: 0x873c91092727e80e2859accd8d756018d7cfb37a22b60bfd18cc915651373dcb)
+❌ Swap ETH for BLX - ERROR: transaction execution reverted (action="sendTransaction", data=null, reason =null, invocation=null, revert=null, transaction={ "data": "", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": null, "blockHash": "0xe85f093ebb60819e6963e20601fd903f4f2c05951641652b22c7e683f11e8537", "blockNumber": 399992, "contractAddress": null, "cumulativeGasUsed": "243243", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "gasPrice": "1113660412", "gasUsed": "243243", "hash": "0x873c91092727e80e2859accd8d756018d7cfb37a22b60bfd18cc915651373dcb", "index": 0, "logs": [  ], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, code=CALL_EXCEPTION, version=6.14.0)
+
+9. Swap BLX for ETH
+--------------------------------------------------
+Swapping 10 BLX for at least 0 ETH...
+Approving 10 BLX for 0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4...
+Approved 10 BLX (tx: 0x596d32f208b07cd33297c7dd6af490443adbcf2719cb7bc98918440ffa0aea0c)
+✓ Approved 10 BLX confirmed (gas used: 29898)
+
+Swapped 10 BLX for ETH (tx: 0x46158e3da5a9ce5694b9d2d17fefb38cd93141433f42068b82db9d73822c10ad)
+❌ Swap BLX for ETH - ERROR: transaction execution reverted (action="sendTransaction", data=null, reason =null, invocation=null, revert=null, transaction={ "data": "", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": null, "blockHash": "0x7c88467fffb2777f55ed97727029c7d328e9cdae448de41b0990f1fae96a9914", "blockNumber": 399994, "contractAddress": null, "cumulativeGasUsed": "213151", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "gasPrice": "1111465466", "gasUsed": "213151", "hash": "0x46158e3da5a9ce5694b9d2d17fefb38cd93141433f42068b82db9d73822c10ad", "index": 0, "logs": [  ], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, code=CALL_EXCEPTION, version=6.14.0)
+
+10. Simple Staking
+--------------------------------------------------
+Staking 500 BLX in BlumeStaking...
+Approving 500 BLX for 0xA8a69ce8C3657BA48d40a8F93aF3a743c45b96D0...
+Approved 500 BLX (tx: 0x036a745e5466e92050ef33e52be40e5c6798f8dde2b7ed5841efb49ee814d11c)
+✓ Approved 500 BLX confirmed (gas used: 47010)
+
+Staked 500 BLX (tx: 0x651756ae64193e642716244910914bc8d0ba96f5bddf9d7b7ac23568d49dffed)
+✓ Staked 500 BLX confirmed (gas used: 102776)
+
+✅ Simple Staking - PASSED
+
+11. Check User Tier
+--------------------------------------------------
+User Tier: Gold (2)
+Min Stake: 10000.0 BLX
+Multiplier: 15000bp (150%)
+✅ Check User Tier - PASSED
+
+12. Liquid Staking
+--------------------------------------------------
+Liquid staking 1000 BLX for stBLX (tier 1)...
+Approving 1000 BLX for 0x36febc9a715B86c87429C671f596B30ad38Bf580...
+Approved 1000 BLX (tx: 0x615754a82f447a4a13375f98b564ffe5fef9898fe616c1f927606acf53eaae1c)
+✓ Approved 1000 BLX confirmed (gas used: 47010)
+
+Updating exchange rate...
+Liquid staked 1000 BLX (tx: 0x1f7f076d4b61c7e26e90ce656b6d91ce4454cf0e9cec06a4103593a8bc2e4fec)
+✓ Liquid staked 1000 BLX confirmed (gas used: 143302)
+
+✅ Liquid Staking - PASSED
+
+13. Vault Deposit
+--------------------------------------------------
+Depositing 500 BLX to vault with 0 seconds lock...
+Approving 500 BLX for 0x9cc370104fF1D80c0986471aAC407A4025CA038C...
+Approved 500 BLX (tx: 0xad52a53820741f9d36d1808dd1fce2db816f44f6a42c7a9107e836c51c606724)
+✓ Approved 500 BLX confirmed (gas used: 47010)
+
+Deposited 500 BLX to vault (tx: 0x01a402b0c1206ce1810cce7bd371ebce6f95946676610792a4888cf1ee7cab3e)
+✓ Deposited 500 BLX to vault confirmed (gas used: 82207)
+
+✅ Vault Deposit - PASSED
+
+14. Yield Strategies Demo
+--------------------------------------------------
+
+� YIELD FARMING STRATEGIES
+==================================================
+
+1. Simple Staking Strategy
+Staking 100 BLX in BlumeStaking...
+Approving 100 BLX for 0xA8a69ce8C3657BA48d40a8F93aF3a743c45b96D0...
+Approved 100 BLX (tx: 0x20b5c5007e00426a90cdc8c3733e55931e09700699d79810162eee7d4e43f525)
+✓ Approved 100 BLX confirmed (gas used: 47010)
+
+Staked 100 BLX (tx: 0x02af0d2dad08cad107a0c0550f1ffcd8344ecec111f7f4a7fa055a311db8c91a)
+✓ Staked 100 BLX confirmed (gas used: 102776)
+
+User Tier: Gold (2)
+Min Stake: 10000.0 BLX
+Multiplier: 15000bp (150%)
+Staking 400 BLX in BlumeStaking...
+Approving 400 BLX for 0xA8a69ce8C3657BA48d40a8F93aF3a743c45b96D0...
+Approved 400 BLX (tx: 0x3d7fa618d68d28ebde625620dc38981e659f91c0d6c2e60348d060e3a12bacb1)
+✓ Approved 400 BLX confirmed (gas used: 47010)
+
+Staked 400 BLX (tx: 0x99cbd7560190ef639d9292863a45c8b1af8588a834fe1f1623ae2b11d646c6fc)
+✓ Staked 400 BLX confirmed (gas used: 102776)
+
+User Tier: Gold (2)
+Min Stake: 10000.0 BLX
+Multiplier: 15000bp (150%)
+
+2. Liquid Staking Strategy
+Liquid staking 500 BLX for stBLX (tier 0)...
+Approving 500 BLX for 0x36febc9a715B86c87429C671f596B30ad38Bf580...
+Approved 500 BLX (tx: 0xe03ae234e758036b9767fb883af033934b0e047a26682e0ac6c0ede5249016f9)
+✓ Approved 500 BLX confirmed (gas used: 47010)
+
+Updating exchange rate...
+Liquid staked 500 BLX (tx: 0x155dd3a4263ba51a9036fd0da0eec1bef83759f1304c6fc68053bb0ebb5080b2)
+✓ Liquid staked 500 BLX confirmed (gas used: 138490)
+
+Liquid staking 500 BLX for stBLX (tier 1)...
+Approving 500 BLX for 0x36febc9a715B86c87429C671f596B30ad38Bf580...
+Approved 500 BLX (tx: 0xf506d650c840896b8d03519f66aa77a73e9f148da45cfcf7c5b5be01bbd073ac)
+✓ Approved 500 BLX confirmed (gas used: 47010)
+
+Updating exchange rate...
+Liquid staked 500 BLX (tx: 0xfbb644bf6fcb2b3b67f8d1fb09e831fc634028c318cc1f9825fd43b3c0143d84)
+✓ Liquid staked 500 BLX confirmed (gas used: 160402)
+
+Liquid Staking Info:
+  Staked: 4500.0 BLX
+  Lock ends: 13/8/2025, 11:45:24 pm
+  Lock duration: 7776000 seconds
+  Multiplier: 13000bp
+  Pending rewards: 0.0 BLX
+
+3. Vault Staking Strategy
+Depositing 400 BLX to vault with 0 seconds lock...
+Approving 400 BLX for 0x9cc370104fF1D80c0986471aAC407A4025CA038C...
+Approved 400 BLX (tx: 0xf6bf981c588d391dffa33414c836ae7f2bccbe6dd579c86de4649e06f52e9f0a)
+✓ Approved 400 BLX confirmed (gas used: 47010)
+
+Deposited 400 BLX to vault (tx: 0xbafffddc520316e17dfa7c38750becc1d1438063f1c463ff2505efa3ff7f4604)
+✓ Deposited 400 BLX to vault confirmed (gas used: 82207)
+
+Depositing 400 BLX to vault with 2592000 seconds lock...
+Approving 400 BLX for 0x9cc370104fF1D80c0986471aAC407A4025CA038C...
+Approved 400 BLX (tx: 0x54af05985436cc05e206948fb40b711d1f952cf9a6bfcbde4d2be1348f301e4d)
+✓ Approved 400 BLX confirmed (gas used: 47010)
+
+Deposited 400 BLX to vault (tx: 0x94db8f7f5f21f0932a4a947ee6998e73b463efcd97c2b191d50a0f9fec60bbbd)
+✓ Deposited 400 BLX to vault confirmed (gas used: 82242)
+
+Depositing 400 BLX to vault with 7776000 seconds lock...
+Approving 400 BLX for 0x9cc370104fF1D80c0986471aAC407A4025CA038C...
+Approved 400 BLX (tx: 0xc7c713e3a46de5c86b8e50cb3c32856bc69bc1310fc82f73fd480a1a6bee9fdf)
+✓ Approved 400 BLX confirmed (gas used: 47010)
+
+Deposited 400 BLX to vault (tx: 0x477cabc5ddb2cc387c1a11e2c356a760cde748b6610c5f63212d124e7250bcf9)
+✓ Deposited 400 BLX to vault confirmed (gas used: 82253)
+
+Vault Info:
+  Effective APY: 1600bp (16%)
+  Pending rewards: 0.0 BLX
+  Remaining lock: 31535328 seconds
+
+4. LP Farming Strategy
+Adding liquidity: 500 BLX + 0.16667 ETH...
+Approving 1000 BLX for 0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4...
+Approved 1000 BLX (tx: 0x1f165098dc86de2191f85e8a7928dc63a28ffbb24f1ac4c606e648475cc6130c)
+✓ Approved 1000 BLX confirmed (gas used: 29910)
+
+Added liquidity: 500 BLX + 0.16667 ETH (tx: 0xaa3f997710bdab679b29814c28bd1ccf021e382ceda80664995819b5da04fa22)
+✓ Added liquidity: 500 BLX + 0.16667 ETH confirmed (gas used: 150049)
+
+Pool Reserves:
+  Reserve0: 0.0
+  Reserve1: 0.0
+  WETH: 0.0
+  BLX: 0.0
+LP Token Balance: 0.0
+Swapping 0.01 ETH for at least 0 BLX...
+Swapped 0.01 ETH for BLX (tx: 0xcb53548ba72cbfad51c9563fb25177e8f8612874d57c72f71581c26d484fcfa6)
+❌ Yield Strategies Demo - ERROR: transaction execution reverted (action="sendTransaction", data=null, r eason=null, invocation=null, revert=null, transaction={ "data": "", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": null, "blockHash": "0x0b167493a59c6165aa21ee24c5920a07b54d8506274f0b4b9f823ce55f46ac2a", "blockNumber": 400020, "contractAddress": null, "cumulativeGasUsed": "243243", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "gasPrice": "1108935004", "gasUsed": "243243", "hash": "0xcb53548ba72cbfad51c9563fb25177e8f8612874d57c72f71581c26d484fcfa6", "index": 0, "logs": [
+], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, code=CALL_EXCEPTION, version=6.14.0)
+
+15. Final Balance Check
+--------------------------------------------------
+
+� Balance Summary
+------------------------------
+BLX: 1010008992994047.639705833685608187 BLX
+stBLX: 0.0 stBLX
+LP Tokens: 0.0 LP
+ETH: 80.102519271803125238 ETH
+✅ Final Balance Check - PASSED
+
+16. Final Rewards Check
+--------------------------------------------------
+
+� Rewards Summary
+------------------------------
+Staking rewards: 0.000000000001087343 BLX
+Liquid staking rewards: 0.001113013698630136 BLX
+Vault rewards: 0.000925420629856527 BLX
+✅ Final Rewards Check - PASSED
+
+================================================================================
+� TEST SUITE COMPLETE
+Tests passed: 13/16
+Success rate: 81.3%
+================================================================================
+
+� ADDITIONAL TESTING
+
+� ROLE MANAGEMENT TESTING
+========================================
+0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73 has DEFAULT_ADMIN_ROLE: true
+0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73 has MINTER_ROLE: true
+0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73 has PAUSER_ROLE: true
+Pausing BlumeToken contract...
+Contract paused (tx: 0x509bc4e03435c01a9b840c89cbeda64bfb944edfde52a8784f522694ff230e5d)
+✓ Contract paused confirmed (gas used: 47415)
+
+Contract paused: true
+Unpausing BlumeToken contract...
+Contract unpaused (tx: 0x4e9375205cb53fcd60ddd6a58dc45eec9bf17054a805eab84e6ea52e49724ec3)
+✓ Contract unpaused confirmed (gas used: 25489)
+
+Contract paused: false

@@ -1,0 +1,69 @@
+D:\uniquecrypto\test1 (test1@1.0.0)
+λ npx hardhat test test\PriceOracle.test.js
+
+
+  PriceOracle
+    Deployment
+      √ Should set up roles correctly (77ms)
+      √ Should initialize with no price feeds (48ms)
+    Price Feed Management
+      √ Should set price feed (47ms)
+      √ Should validate price feed before setting (165ms)
+      √ Should restrict price feed management to ORACLE_ADMIN_ROLE (48ms)
+      √ Should validate token address when setting price feed
+      √ Should validate price feed address when setting
+    Custom Price Management
+      √ Should set custom price (63ms)
+      √ Should restrict custom price management to ORACLE_ADMIN_ROLE (46ms)
+      √ Should validate token address when setting custom price
+      √ Should validate price value when setting custom price
+    Price Retrieval
+      √ Should get price from price feed (47ms)
+      √ Should get price from custom price if no feed (62ms)
+      √ Should fail if no price feed or custom price
+      √ Should validate token address when getting price
+      √ Should check price feed staleness (113ms)
+      √ Should check custom price staleness (49ms)
+      √ Should check for negative prices (127ms)
+      √ Should prioritize price feed over custom price (160ms)
+
+
+  19 passing (6s)
+
+················································································································
+|  Solidity and Network Configuration                                                                          │
+···························|·················|···············|·················|································
+|  Solidity: 0.8.20        ·  Optim: true    ·  Runs: 200    ·  viaIR: true    ·     Block: 30,000,000 gas     │
+···························|·················|···············|·················|································
+|  Methods                                                                                                     │
+···························|·················|···············|·················|················|···············
+|  Contracts / Methods     ·  Min            ·  Max          ·  Avg            ·  # calls       ·  usd (avg)   │
+···························|·················|···············|·················|················|···············
+|  MockPriceFeed           ·                                                                                   │
+···························|·················|···············|·················|················|···············
+|      setLatestRoundData  ·         92,775  ·      132,995  ·        130,191  ·            24  ·           -  │
+···························|·················|···············|·················|················|···············
+|  PriceOracle             ·                                                                                   │
+···························|·················|···············|·················|················|···············
+|      grantRole           ·              -  ·            -  ·         51,174  ·            19  ·           -  │
+···························|·················|···············|·················|················|···············
+|      setCustomPrice      ·         70,246  ·       70,258  ·         70,256  ·             5  ·           -  │
+···························|·················|···············|·················|················|···············
+|      setPriceFeed        ·              -  ·            -  ·         62,308  ·             5  ·           -  │
+···························|·················|···············|·················|················|···············
+|  Deployments                               ·                                 ·  % of limit    ·              │
+···························|·················|···············|·················|················|···············
+|  BlumeToken              ·              -  ·            -  ·      1,502,202  ·           5 %  ·           -  │
+···························|·················|···············|·················|················|···············
+|  MockPriceFeed           ·              -  ·            -  ·        158,791  ·         0.5 %  ·           -  │
+···························|·················|···············|·················|················|···············
+|  PriceOracle             ·              -  ·            -  ·        831,896  ·         2.8 %  ·           -  │
+···························|·················|···············|·················|················|···············
+|  Key                                                                                                         │
+················································································································
+|  ◯  Execution gas for this method does not include intrinsic gas overhead                                    │
+················································································································
+|  △  Cost was non-zero but below the precision setting for the currency display (see options)                 │
+················································································································
+|  Toolchain:  hardhat                                                                                         │
+················································································································

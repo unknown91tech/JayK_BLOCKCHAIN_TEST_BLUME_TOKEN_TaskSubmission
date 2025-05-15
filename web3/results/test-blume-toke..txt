@@ -1,0 +1,61 @@
+D:\uniquecrypto\test1 - Copy (master) (test1@1.0.0)
+λ npx hardhat run scripts/test/test-blume-token.js --network hoodi
+� Testing Blume Token Contract...
+
+Owner address (same as user1): 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+User2 address: 0xf217C314E3F75b8477Ab12A765d16B6Dbcd13b39
+
+� Contract Info:
+Token name: BLUME TOKEN
+Token symbol: BLX
+Token decimals: 18n
+Total supply: 2025021000001000.00000001 BLX
+
+� Test 1: Initial Balances
+Owner balance: 1005008999999400.00000001 BLX
+
+� Test 2: Transaction Limits
+Max transaction amount: 0.000000001 BLX
+Max wallet balance: 0.000000001 BLX
+
+� Test 3: Cooldown Time
+Cooldown time: 60 seconds
+
+� Test 4: Token Transfer
+Transferring 1000 BLX to user2...
+✅ Transfer successful
+User2 balance after transfer: 1020012000001600.0 BLX
+
+� Test 5: Cooldown Mechanism
+Attempting immediate second transfer...
+✅ Second transfer successful (owner excluded from limits)
+
+� Test 6: User Transfer with Cooldown
+User2 transferring 100 BLX to owner...
+✅ First user transfer successful
+User2 attempting immediate second transfer...
+❌ This should have failed due to cooldown
+
+� Test 7: Final Balances
+Owner balance: 1005008999999400.00000001 BLX
+User2 balance: 1020012000001600.0 BLX
+
+� Test 8: Exclusion Status
+Owner excluded from limits: true
+User2 excluded from limits: false
+
+� Test 9: Role Management
+Owner has admin role: true
+Owner has minter role: true
+
+� Test 10: Minting Tokens to User2
+Minting 1000 BLX to user2...
+✅ Minting successful
+User2 balance after mint: 1020012000001600.0 BLX
+
+� Test 11: Minting Tokens to Owner
+Minting 5000 BLX to owner...
+✅ Minting to owner successful
+Owner balance after mint: 1005008999998450.00000001 BLX
+
+✅ All tests completed!

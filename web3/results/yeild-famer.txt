@@ -1,0 +1,95 @@
+D:\uniquecrypto\test1 - Copy (master) (test1@1.0.0)
+λ npx hardhat run scripts/test/yield-famer.js --network hoodi
+� Yield Farmer: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+
+� Setting up oracle prices...
+⚠️ Could not set max price deviation
+✅ Oracle prices set
+
+� YIELD FARMING STRATEGIES DEMONSTRATION
+==========================================
+
+� STRATEGY 1: SIMPLE STAKING
+------------------------------
+Current BLX balance: 1010008992982348.000000009 BLX
+Staking 100 BLX (Bronze tier)...
+After 100 BLX - Silver:
+  Min stake: 1000.0 BLX
+  Multiplier: 12500bp (125%)
+  Pending rewards: 0.000000000000204 BLX
+Staking additional 400 BLX...
+After 500 BLX total - Silver:
+  Min stake: 1000.0 BLX
+  Multiplier: 12500bp (125%)
+  Pending rewards: 0.00000000000021 BLX
+
+� STRATEGY 2: LIQUID STAKING
+------------------------------
+Updating exchange rate...
+Liquid staking 500 BLX (No Lock lock)...
+✅ Success: No Lock lock
+Liquid staking 500 BLX (30-day lock)...
+✅ Success: 30-day lock
+Liquid staking 500 BLX (90-day lock)...
+✅ Success: 90-day lock
+stBLX received: 0.0 stBLX
+Total staked: 2500.0 BLX
+Lock ends: 11/11/2025, 11:34:36 pm
+Multiplier: 16000bp
+Pending rewards: 0.0 BLX
+
+�️ STRATEGY 3: VAULT STAKING
+-----------------------------
+Depositing 400 BLX with no lock...
+Depositing 400 BLX with 30-day lock...
+Depositing 400 BLX with 90-day lock...
+Depositing 400 BLX with 365-day lock...
+Effective APY: 1600bp (16%)
+Pending rewards: 0.0 BLX
+Remaining lock time: 31536000 seconds
+
+� STRATEGY 4: LP FARMING
+--------------------------
+Current reserves - R0: 0.0, R1: 0.0
+Adding initial liquidity: 500 BLX + 0.16667 ETH...
+LP tokens received: 0.0 LP
+Simulating trades to generate LP fees...
+Swap 1 failed: transaction execution reverted (action="sendTransaction", data=null, reason=null, invocation=null, revert=null, transaction={ "data": "", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": null, "blockHash": "0x59bd5f92b5ccc8e2c1563c07bb8aa402d0745658eeb23884bfeb10dd134d55b6", "blockNumber": 399964, "contractAddress": null, "cumulativeGasUsed": "243243", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "gasPrice": "1119421536", "gasUsed": "243243", "hash": "0x87db4047a0c39e61220c5ba24abf5d2f4a2061da925a04f6137541377b138fbb", "index": 0, "logs": [  ], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, code=CALL_EXCEPTION, version=6.14.0)
+✅ Trading simulation complete
+
+� STRATEGY 5: AUTOMATED YIELD FARMING
+--------------------------------------
+Checking yield farmer contract interface...
+Depositing 1000 BLX to automated yield farmer...
+Yield farmer interface error: transaction execution reverted (action="sendTransaction", data=null, reason=null, invocation=null, revert=null, transaction={ "data": "", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "to": "0xf9fa9fFF3896A97AC50247062C7843DD78F2c0B7" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": null, "blockHash": "0xe3aab331020438c079149fed70658185f9e7392bbb1e6f573b6a7000678e1bb1", "blockNumber": 399965, "contractAddress": null, "cumulativeGasUsed": "35386579", "from": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73", "gasPrice": "981520332", "gasUsed": "338099", "hash": "0xd6d8b3fc249225e5c3b9b0eda949209b3a9594359ef36499cd4e172b3338547d", "index": 15, "logs": [  ], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0xf9fa9fFF3896A97AC50247062C7843DD78F2c0B7" }, code=CALL_EXCEPTION, version=6.14.0)
+⚠️ Skipping automated yield farming - contract interface mismatch
+
+� STRATEGY 6: COMPOUND STRATEGIES
+----------------------------------
+Attempting to harvest/compound rewards...
+Pending staking rewards: 0.000000000000276 BLX
+Compounding vault rewards...
+✅ Vault rewards compounded
+Updating liquid staking exchange rate...
+✅ Liquid staking rewards updated
+
+� CHECKING ALL PENDING REWARDS
+------------------------------
+Vault pending rewards: 0.00012785395310543 BLX
+Liquid staking rewards: 0.000684931506849315 BLX
+Regular staking rewards: 0.000000000000288 BLX
+
+� FINAL PORTFOLIO SUMMARY
+===========================
+BLX Balance: 1010008992978747.834804981700041281 BLX
+stBLX Balance: 0.0 stBLX
+LP Tokens: 0.0 LP
+ETH Balance: 80.305952959523060485 ETH
+
+� CHECKING ALL PENDING REWARDS
+------------------------------
+Vault pending rewards: 0.00012785395310543 BLX
+Liquid staking rewards: 0.000684931506849315 BLX
+Regular staking rewards: 0.000000000000288 BLX
+
+✨ Yield farming demonstration complete! ✨

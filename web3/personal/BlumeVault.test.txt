@@ -1,0 +1,101 @@
+D:\uniquecrypto\test1 (test1@1.0.0)
+λ npx hardhat test test/BlumeVault.test.js
+
+
+  BlumeVault
+    Deployment
+      √ Should initialize with correct parameters (78ms)
+      √ Should set up correct lock period bonuses (161ms)
+    Deposits
+      √ Should allow deposits with different lock periods (111ms)
+      √ Should update lock period when extending (160ms)
+    Withdrawals
+      1) Should allow withdrawals when not locked
+      2) Should prevent withdrawals during lock period
+    Rewards calculation
+      √ Should calculate correct rewards based on lock period (224ms)
+    Rewards compounding
+      √ Should compound rewards correctly (170ms)
+    Global compounding
+      √ Should allow global compounding by authorized role (80ms)
+    Access control
+      √ Should enforce role-based access control (159ms)
+
+
+  8 passing (3s)
+  2 failing
+
+  1) BlumeVault
+       Withdrawals
+         Should allow withdrawals when not locked:
+
+      AssertionError: Expected "500000006341958396752" to be equal 500000000000000000000
+      + expected - actual
+
+       {
+      -  "_hex": "0x1b1ae4d6e2ef500000"
+      +  "_hex": "0x1b1ae4dca7897d6b50"
+         "_isBigNumber": true
+       }
+
+      at Context.<anonymous> (test\BlumeVault.test.js:120:37)
+
+  2) BlumeVault
+       Withdrawals
+         Should prevent withdrawals during lock period:
+     AssertionError: Expected "509041106354642313546" to be within 1000000000000000 of 500000000000000000000
+      at Context.<anonymous> (test\BlumeVault.test.js:146:40)
+
+
+
+···················································································································
+|  Solidity and Network Configuration                                                                             │
+······························|·················|···············|·················|································
+|  Solidity: 0.8.20           ·  Optim: true    ·  Runs: 200    ·  viaIR: true    ·     Block: 30,000,000 gas     │
+······························|·················|···············|·················|································
+|  Methods                                                                                                        │
+······························|·················|···············|·················|················|···············
+|  Contracts / Methods        ·  Min            ·  Max          ·  Avg            ·  # calls       ·  usd (avg)   │
+······························|·················|···············|·················|················|···············
+|  BlumeToken                 ·                                                                                   │
+······························|·················|···············|·················|················|···············
+|      approve                ·              -  ·            -  ·         46,015  ·             8  ·           -  │
+······························|·················|···············|·················|················|···············
+|      setCooldownTime        ·              -  ·            -  ·         25,209  ·            10  ·           -  │
+······························|·················|···············|·················|················|···············
+|      setExcludedFromLimits  ·         47,783  ·       47,795  ·         47,794  ·            10  ·           -  │
+······························|·················|···············|·················|················|···············
+|      transfer               ·         56,358  ·       56,370  ·         56,364  ·            20  ·           -  │
+······························|·················|···············|·················|················|···············
+|  BlumeVault                 ·                                                                                   │
+······························|·················|···············|·················|················|···············
+|      compoundRewards        ·              -  ·            -  ·         54,533  ·             2  ·           -  │
+······························|·················|···············|·················|················|···············
+|      deposit                ·         84,166  ·      184,481  ·        154,905  ·            10  ·           -  │
+······························|·················|···············|·················|················|···············
+|      executeGlobalCompound  ·              -  ·            -  ·         34,631  ·             1  ·           -  │
+······························|·················|···············|·················|················|···············
+|      setCompoundFrequency   ·              -  ·            -  ·         30,308  ·             1  ·           -  │
+······························|·················|···············|·················|················|···············
+|      setYieldRate           ·              -  ·            -  ·         29,756  ·             1  ·           -  │
+······························|·················|···············|·················|················|···············
+|      withdraw               ·         77,286  ·       79,471  ·         78,379  ·             2  ·           -  │
+······························|·················|···············|·················|················|···············
+|  Deployments                                  ·                                 ·  % of limit    ·              │
+······························|·················|···············|·················|················|···············
+|  BlumeToken                 ·              -  ·            -  ·      1,502,202  ·           5 %  ·           -  │
+······························|·················|···············|·················|················|···············
+|  BlumeVault                 ·      1,430,944  ·    1,430,956  ·      1,430,955  ·         4.8 %  ·           -  │
+······························|·················|···············|·················|················|···············
+|  Key                                                                                                            │
+···················································································································
+|  ◯  Execution gas for this method does not include intrinsic gas overhead                                       │
+···················································································································
+|  △  Cost was non-zero but below the precision setting for the currency display (see options)                    │
+···················································································································
+|  Toolchain:  hardhat                                                                                            │
+···················································································································
+
+Your solidity settings have viaIR enabled, which is not fully supported yet. You can still use Hardhat, but some features, like stack traces, might not work correctly.
+
+Learn more at https://hardhat.org/solc-viair

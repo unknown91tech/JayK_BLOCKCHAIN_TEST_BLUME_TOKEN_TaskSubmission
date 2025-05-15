@@ -1,0 +1,49 @@
+D:\uniquecrypto\test1 - Copy (master) (test1@1.0.0)
+λ npx hardhat run scripts/test/test-liquidity-pools.js --network hoodi
+Using account: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+
+=== Factory Information ===
+
+=== Protocol Fee Settings ===
+Protocol fee: 30 basis points (0.3%)
+Fee receiver: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+Factory address: 0xb86D27c3736062132879E743c7648093F500fb7e
+Total pairs created: 1
+Protocol fee: 30 basis points
+Fee receiver: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+
+Access Control:
+ADMIN_ROLE: 0xa49807205ce4d355092ef5a8a18f56e8913cf4a201fbe287825b095693c21775
+DEFAULT_ADMIN_ROLE: 0x0000000000000000000000000000000000000000000000000000000000000000
+
+=== Getting All Pairs ===
+Total pairs created: 1
+Pair 0: 0xa7603f3D223141e494dAfEc9e6f9D0aE23CB5714
+
+=== Updating Protocol Fee ===
+Setting protocol fee to 50 basis points (0.5%)
+Transaction hash: 0x03c7b5cada62a1abeb1216056417489c7746bb39a88b409a0f5ea3a3e902390c
+✅ Protocol fee updated successfully!
+
+=== Updating Fee Receiver ===
+Setting fee receiver to 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+Transaction hash: 0x8dfa5b39e3f91faa8b6073b8da1d8b7a94a5d6253ceacb7603c17df995125c21
+✅ Fee receiver updated successfully!
+
+=== Granting Admin Role ===
+Granting admin role to 0xf217C314E3F75b8477Ab12A765d16B6Dbcd13b39
+Transaction hash: 0x2c6318c1908972c32122dbf2f4ec045a8c1c5778ade6d3cb48f8a6db4abc8d11
+✅ Admin role granted successfully!
+
+=== Creating Standard Pairs ===
+
+Creating BLX-WETH pair...
+
+=== Creating Trading Pair ===
+ethers defined: true ethers.constants: false
+Creating pair for tokens: 0x8CBabC07717038DA6fAf1bC477a39F1627988a3a and 0x17a8eabD12bCEb2fBD0789E8063BcD42325CA4CA
+Error creating pair: execution reverted: BlumeSwap: PAIR_EXISTS
+Failed to create BLX-WETH pair: execution reverted: BlumeSwap: PAIR_EXISTS
+
+=== Watching for Pair Creation Events ===
+Listening for PairCreated events... (Press Ctrl+C to stop)

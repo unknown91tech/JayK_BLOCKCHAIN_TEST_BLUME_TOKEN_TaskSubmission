@@ -1,0 +1,83 @@
+D:\uniquecrypto\test1 (test1@1.0.0)                                                                                                                 
+λ npx hardhat test test/BlumeToken.test.js                                                                                                          
+                                                                                                                                                    
+                                                                                                                                                    
+  BlumeToken                                                                                                                                        
+    Deployment                                                                                                                                      
+      √ Should set the right owner                                                                                                                  
+      √ Should assign the total supply of tokens to the owner                                                                                       
+    Transactions                                                                                                                                    
+      √ Should transfer tokens between accounts (78ms)                                                                                              
+      √ Should fail if sender doesn't have enough tokens (58ms)                                                                                     
+    Anti-whale mechanisms                                                                                                                           
+      √ Should enforce max transaction amount (90ms)                                                                                                
+      √ Should enforce max wallet balance (137ms)                                                                                                   
+      1) Should enforce cooldown period                                                                                                             
+    Role-based access control                                                                                                                       
+      √ Only admin can mint new tokens (50ms)                                                                                                       
+      √ Only admin can change limits (49ms)                                                                                                         
+    Pausing functionality                                                                                                                           
+      √ Should pause and unpause transfers (76ms)                                                                                                   
+      √ Only authorized roles can pause/unpause                                                                                                     
+                                                                                                                                                    
+                                                                                                                                                    
+  10 passing (2s)                                                                                                                                   
+  1 failing                                                                                                                                         
+                                                                                                                                                    
+  1) BlumeToken                                                                                                                                     
+       Anti-whale mechanisms                                                                                                                        
+         Should enforce cooldown period:                                                                                                            
+                                                                                                                                                    
+      AssertionError: Expected transaction to be reverted                                                                                           
+      + expected - actual                                                                                                                           
+                                                                                                                                                    
+      -Transaction NOT reverted.                                                                                                                    
+      +Transaction reverted.                                                                                                                        
+                                                                                                                                                    
+                                                                                                                                                    
+                                                                                                                                                    
+                                                                                                                                                    
+                                                                                                                                                    
+·····················································································································                               
+|  Solidity and Network Configuration                                                                               │                               
+································|·················|···············|·················|································                               
+|  Solidity: 0.8.20             ·  Optim: true    ·  Runs: 200    ·  viaIR: true    ·     Block: 30,000,000 gas     │                               
+································|·················|···············|·················|································                               
+|  Methods                                                                                                          │                               
+································|·················|···············|·················|················|···············                               
+|  Contracts / Methods          ·  Min            ·  Max          ·  Avg            ·  # calls       ·  usd (avg)   │                               
+································|·················|···············|·················|················|···············                               
+|  BlumeToken                   ·                                                                                   │                               
+································|·················|···············|·················|················|···············                               
+|      mint                     ·              -  ·            -  ·         55,610  ·             1  ·           -  │                               
+································|·················|···············|·················|················|···············                               
+|      pause                    ·              -  ·            -  ·         47,203  ·             1  ·           -  │                               
+································|·················|···············|·················|················|···············                               
+|      setCooldownTime          ·              -  ·            -  ·         27,221  ·             2  ·           -  │                               
+································|·················|···············|·················|················|···············                               
+|      setMaxTransactionAmount  ·              -  ·            -  ·         29,785  ·             1  ·           -  │                               
+································|·················|···············|·················|················|···············                               
+|      setMaxWalletBalance      ·              -  ·            -  ·         29,927  ·             1  ·           -  │                               
+································|·················|···············|·················|················|···············                               
+|      transfer                 ·         41,432  ·       87,587  ·         64,013  ·            12  ·           -  │                               
+································|·················|···············|·················|················|···············                               
+|      unpause                  ·              -  ·            -  ·         24,987  ·             1  ·           -  │                               
+································|·················|···············|·················|················|···············                               
+|  Deployments                                    ·                                 ·  % of limit    ·              │                               
+································|·················|···············|·················|················|···············                               
+|  BlumeToken                   ·              -  ·            -  ·      1,502,202  ·           5 %  ·           -  │                               
+································|·················|···············|·················|················|···············                               
+|  Key                                                                                                              │                               
+·····················································································································                               
+|  ◯  Execution gas for this method does not include intrinsic gas overhead                                         │                               
+·····················································································································                               
+|  △  Cost was non-zero but below the precision setting for the currency display (see options)                      │                               
+·····················································································································                               
+|  Toolchain:  hardhat                                                                                              │                               
+·····················································································································                               
+                                                                                                                                                    
+Your solidity settings have viaIR enabled, which is not fully supported yet. You can still use Hardhat, but some features, like stack traces, might 
+not work correctly.                                                                                                                                 
+                                                                                                                                                    
+Learn more at https://hardhat.org/solc-viair                                                                                                        
+                                                                                                                                                    

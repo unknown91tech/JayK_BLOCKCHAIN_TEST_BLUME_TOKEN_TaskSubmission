@@ -1,0 +1,33 @@
+{
+  "network": "hoodi",
+  "timestamp": "2025-05-03T09:34:10.100Z",
+  "deployer": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73",
+  "contracts": {
+    "BlumeToken": "0x8CBabC07717038DA6fAf1bC477a39F1627988a3a",
+    "WETH": "0x17a8eabD12bCEb2fBD0789E8063BcD42325CA4CA",
+    "BlumeSwapFactory": "0xb86D27c3736062132879E743c7648093F500fb7e",
+    "BlumeSwapRouter": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4",
+    "FixedPriceOracle": "0xBa597F46Cad97A8eAbbcb7E63EcEB9957B1f7688",
+    "BlumeStaking": "0xA8a69ce8C3657BA48d40a8F93aF3a743c45b96D0",
+    "BlumeStakingHub": "0x36febc9a715B86c87429C671f596B30ad38Bf580",
+    "StakedBlumeToken": "0x2f1473c53163A24439Dc48E994c8A5d0E3B8B98B",
+    "BlumeStakingHubFactory": "0x9C2b2bc3357D64bBa3471547C5a33D58E42550ea",
+    "BlumeVault": "0x9cc370104fF1D80c0986471aAC407A4025CA038C",
+    "BlumeVaultController": "0x263c05A4B4348Cb0B74db5b3e85174532209c5BA",
+    "BLX_WETH_Pair": "0x9cAFb45c2f4B06d68A30179Fd103c735B2338150",
+    "BlumeStakingDeFiIntegration": "0x9d09e7E7F265dc6a6Ca8CB14aC973cA411b64b42",
+    "BlumeYieldFarmer": "0xf9fa9fFF3896A97AC50247062C7843DD78F2c0B7"
+  },
+  "config": {
+    "initialSupply": {
+      "type": "BigNumber",
+      "hex": "0x52b7d2dcc80cd2e4000000"
+    },
+    "rewardRate": 500,
+    "protocolFee": 300,
+    "yieldRate": 800,
+    "compoundFrequency": 86400,
+    "maxPriceDeviation": 300,
+    "verifyContracts": false
+  }
+}

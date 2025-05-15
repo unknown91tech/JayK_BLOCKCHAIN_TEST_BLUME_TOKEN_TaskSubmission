@@ -1,0 +1,63 @@
+D:\uniquecrypto\test1 - Copy (master) (test1@1.0.0)
+λ npx hardhat run scripts/test/test-antiwhale-antibot.js --network hoodi
+� Testing Anti-Whale and Anti-Bot Mechanisms...
+
+Owner address: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+Whale address: 0xf217C314E3F75b8477Ab12A765d16B6Dbcd13b39
+Bot address: 0x20d8F0811CF1D1A7Cb650bFABcf4E25C46657f12
+Normal User address: 0xd4b64cf608C0429E3a48256bb500A1178bb32A2f
+Owner has DEFAULT_ADMIN_ROLE: true
+Owner excluded from limits: true
+Whale excluded from limits: true
+Owner BLX balance: 1010008997986449.000000009 BLX
+Type of maxTxAmount: bigint 2000000000000000000000000n
+Type of maxWalletBalance: bigint 3000000000000000000000000n
+Type of totalSupply: bigint 2040021000001000000000010000000000n
+� Current Limits:
+Max TX Amount: 2000000.0 BLX
+Max Wallet Balance: 3000000.0 BLX
+Total Supply: 2040021000001000.00000001 BLX
+
+� Test 1: Anti-Whale Protection
+Transferring 3000000.0 BLX to normalUser for testing...
+NormalUser balance: 0.0 BLX
+Attempting transfer above max transaction limit...
+✅ Test 1 Passed: Anti-whale protection working: execution reverted
+
+✅ Test 2: Valid Transfer Within Limits
+✅ Test 2 Passed: Transfer successful
+Whale balance: 1030012002018551.000000001 BLX
+
+� Test 3: Anti-Bot Cooldown
+Bot balance before transfer: 1000.0 BLX
+Transferring 1000 BLX to bot...
+✅ Initial transfer to bot successful
+Bot balance: 2000.0 BLX
+Bot making first transaction...
+✅ Test 3 Passed: Cooldown protection working: execution reverted: Recipient balance would exceed the ma ximum allowed
+
+� Test 4: Excluding Address from Limits
+Excluding whale from limits...
+✅ Whale excluded from limits
+Whale attempting large transaction after exclusion...
+✅ Test 4 Passed: Large transaction successful - exclusion working
+Whale balance: 1030012004019551.000000001 BLX
+
+⚙️ Test 5: Updating Limits
+Updating transaction limits...
+New max TX: 2000000.0 BLX
+New max wallet: 3000000.0 BLX
+✅ Test 5 Passed: Limits updated successfully
+
+⏱️ Test 6: Updating Cooldown Time
+Updating cooldown time to 30 seconds...
+New cooldown: 30 seconds
+✅ Test 6 Passed: Cooldown updated successfully
+
+� Final Balances:
+Owner: 1010008992979449.000000009 BLX
+Whale: 1030012004019551.000000001 BLX
+Bot: 2000.0 BLX
+Normal User: 3000000.0 BLX
+
+� Tests completed!

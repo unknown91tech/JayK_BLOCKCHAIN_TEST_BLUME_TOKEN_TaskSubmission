@@ -1,0 +1,120 @@
+
+D:\uniquecrypto\test1 (test1@1.0.0)
+λ npx hardhat test test/BlumeStakingHubFactory.test.js
+
+
+  BlumeStakingHubFactory
+    Deployment
+      √ Should initialize with correct roles (78ms)
+      √ Should initialize with empty staking hubs
+    Hub Deployment
+Admin role not granted to owner, checking if granted to factory...
+      1) Should deploy staking hub correctly
+      √ Should restrict hub deployment to accounts with DEPLOYER_ROLE (48ms)
+      √ Should allow deploying multiple hubs (82ms)
+    Hub Management
+      √ Should update hub status correctly (120ms)
+      √ Should restrict hub status updates to accounts with DEPLOYER_ROLE (41ms)
+      √ Should handle non-existent hub gracefully
+    Hub Querying
+      √ Should return all staking hubs
+      √ Should return only active staking hubs
+    Integration with StakingHub
+      √ Should deploy hub with working staking functionality (93ms)
+      √ Should deploy hub with working unstaking functionality (189ms)
+Admin role granted to owner: false
+Admin role granted to factory: true
+      2) Should have correct role hierarchy from factory to hub
+    Edge Cases and Security
+      √ Should validate parameters when deploying hub (53ms)
+      √ Should handle edge cases with hub indexing (160ms)
+
+
+  13 passing (6s)
+  2 failing
+
+  1) BlumeStakingHubFactory
+       Hub Deployment
+         Should deploy staking hub correctly:
+
+      AssertionError: expected false to be true
+      + expected - actual
+
+      -false
+      +true
+
+      at Context.<anonymous> (test\BlumeStakingHubFactory.test.js:129:67)
+
+  2) BlumeStakingHubFactory
+       Integration with StakingHub
+         Should have correct role hierarchy from factory to hub:
+
+      AssertionError: expected false to be true
+      + expected - actual
+
+      -false
+      +true
+
+      at Context.<anonymous> (test\BlumeStakingHubFactory.test.js:423:67)
+
+
+
+··························································································································
+|  Solidity and Network Configuration                                                                                    │
+·····································|·················|···············|·················|································
+|  Solidity: 0.8.20                  ·  Optim: true    ·  Runs: 200    ·  viaIR: true    ·     Block: 30,000,000 gas     │
+·····································|·················|···············|·················|································
+|  Methods                                                                                                               │
+·····································|·················|···············|·················|················|···············
+|  Contracts / Methods               ·  Min            ·  Max          ·  Avg            ·  # calls       ·  usd (avg)   │
+·····································|·················|···············|·················|················|···············
+|  BlumeStaking                      ·                                                                                   │
+·····································|·················|···············|·················|················|···············
+|      unstake                       ·              -  ·            -  ·        176,522  ·             1  ·           -  │
+·····································|·················|···············|·················|················|···············
+|  BlumeStakingHub                   ·                                                                                   │
+·····································|·················|···············|·················|················|···············
+|      stake                         ·              -  ·            -  ·        223,269  ·             2  ·           -  │
+·····································|·················|···············|·················|················|···············
+|      updateRewardsAndExchangeRate  ·              -  ·            -  ·         50,432  ·             1  ·           -  │
+·····································|·················|···············|·················|················|···············
+|  BlumeStakingHubFactory            ·                                                                                   │
+·····································|·················|···············|·················|················|···············
+|      deployStakingHub              ·      2,821,479  ·    2,883,494  ·      2,837,468  ·            26  ·           -  │
+·····································|·················|···············|·················|················|···············
+|      grantRole                     ·              -  ·            -  ·         51,193  ·            15  ·           -  │
+·····································|·················|···············|·················|················|···············
+|      updateHubStatus               ·         30,234  ·       52,146  ·         33,886  ·             6  ·           -  │
+·····································|·················|···············|·················|················|···············
+|  BlumeSwapPair                     ·                                                                                   │
+·····································|·················|···············|·················|················|···············
+|      approve                       ·              -  ·            -  ·         46,015  ·             1  ·           -  │
+·····································|·················|···············|·················|················|···············
+|  BlumeToken                        ·                                                                                   │
+·····································|·················|···············|·················|················|···············
+|      approve                       ·              -  ·            -  ·         46,015  ·             2  ·           -  │
+·····································|·················|···············|·················|················|···············
+|      setCooldownTime               ·              -  ·            -  ·         25,209  ·            15  ·           -  │
+·····································|·················|···············|·················|················|···············
+|      setExcludedFromLimits         ·         27,895  ·       47,795  ·         43,965  ·            78  ·           -  │
+·····································|·················|···············|·················|················|···············
+|      transfer                      ·              -  ·            -  ·         56,358  ·            15  ·           -  │
+·····································|·················|···············|·················|················|···············
+|  Deployments                                         ·                                 ·  % of limit    ·              │
+·····································|·················|···············|·················|················|···············
+|  BlumeStakingHubFactory            ·              -  ·            -  ·      3,748,627  ·        12.5 %  ·           -  │
+·····································|·················|···············|·················|················|···············
+|  BlumeToken                        ·              -  ·            -  ·      1,502,202  ·           5 %  ·           -  │
+·····································|·················|···············|·················|················|···············
+|  Key                                                                                                                   │
+··························································································································
+|  ◯  Execution gas for this method does not include intrinsic gas overhead                                              │
+··························································································································
+|  △  Cost was non-zero but below the precision setting for the currency display (see options)                           │
+··························································································································
+|  Toolchain:  hardhat                                                                                                   │
+··························································································································
+
+Your solidity settings have viaIR enabled, which is not fully supported yet. You can still use Hardhat, but some features, like stack traces, might not work correctly.
+
+Learn more at https://hardhat.org/solc-viair

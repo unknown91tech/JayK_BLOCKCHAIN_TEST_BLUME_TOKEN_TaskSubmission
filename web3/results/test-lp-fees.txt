@@ -1,0 +1,180 @@
+D:\uniquecrypto\test1 - Copy (master) (test1@1.0.0)
+λ npx hardhat run scripts/test/test-lp-fees.js --network hoodi
+� Testing LP Tokens and Fee Distribution...
+
+
+� Validating contract addresses...
+Validated blumeToken: 0x8CBabC07717038DA6fAf1bC477a39F1627988a3a
+Validated weth: 0x2f9aAd71531651432deCB6f34f0d124F7136227A
+Validated factory: 0xb86D27c3736062132879E743c7648093F500fb7e
+Validated router: 0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4
+Validated blxWethPair: 0x9cAFb45c2f4B06d68A30179Fd103c735B2338150
+Owner: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+LP Provider 1: 0xf217C314E3F75b8477Ab12A765d16B6Dbcd13b39
+LP Provider 2: 0x20d8F0811CF1D1A7Cb650bFABcf4E25C46657f12
+Trader 1: 0xd4b64cf608C0429E3a48256bb500A1178bb32A2f
+Trader 2: 0x3FD5A6b36a155A7080651064CC79D0bd5974a920
+
+� Test 2: Setup Liquidity Providers
+Owner ETH balance: 84.483075222789880403 ETH
+LP Provider 1 ETH balance: 5.995314301506936896 ETH
+LP Provider 2 ETH balance: 0.099555863999506719 ETH
+Funding LP Provider 2 with ETH...
+Sending to LP2: 3.000444136000493281 ETH
+LP Provider 2 new ETH balance: 3.1 ETH
+Owner BLX balance: 1010008992979349.000000009
+Transferred BLX to LP providers
+LP1 BLX balance: 1030012004019551.000000001
+LP2 BLX balance: 2000.0
+LP providers wrapped ETH
+LP1 WETH balance: 33.0
+LP2 WETH balance: 33.1
+
+� Test 3: First LP Provider Adds Liquidity
+LP1 BLX balance: 1030012004019551.000000001
+LP1 WETH balance: 33.0
+LP1 BLX allowance: 0.0
+LP1 WETH allowance: 0.0
+LP1 balance before: 0.0
+Current reserves: 0.0 token0 0.0 token1
+Pair token0: 0x0000000000000000000000000000000000000000
+Pair token1: 0x0000000000000000000000000000000000000000
+Adding liquidity with tokenA: 0x8CBabC07717038DA6fAf1bC477a39F1627988a3a tokenB: 0x2f9aAd71531651432deCB6f34f0d124F7136227A
+Using BLX/WETH order
+Add liquidity failed: Error: transaction execution reverted (action="sendTransaction", data=null, reason=null, invocation=null, revert=null, transaction={ "data": "", "from": "0xf217C314E3F75b8477Ab12A765d16B6Dbcd13b39", "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": null, "blockHash": "0x841240c9b1ef4f7c03b0cd02c548e07639314e7aa590b90499d1fab25b3167cb", "blockNumber": 399844, "contractAddress": null, "cumulativeGasUsed": "1250098", "from": "0xf217C314E3F75b8477Ab12A765d16B6Dbcd13b39", "gasPrice": "1108987840", "gasUsed": "970776", "hash": "0x0f108ed71a38a690be75f2b2e411595e3a9979a75116594b09f1c7d38e612178", "index": 7, "logs": [  ], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, code=CALL_EXCEPTION, version=6.14.0)
+    at makeError (D:\uniquecrypto\test1 - Copy\node_modules\ethers\src.ts\utils\errors.ts:694:21)
+    at assert (D:\uniquecrypto\test1 - Copy\node_modules\ethers\src.ts\utils\errors.ts:715:25)
+    at checkReceipt (D:\uniquecrypto\test1 - Copy\node_modules\ethers\src.ts\providers\provider.ts:1607:19)
+    at txListener (D:\uniquecrypto\test1 - Copy\node_modules\ethers\src.ts\providers\provider.ts:1657:33)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  code: 'CALL_EXCEPTION',
+  action: 'sendTransaction',
+  data: null,
+  reason: null,
+  invocation: null,
+  revert: null,
+  transaction: {
+    to: '0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4',
+    from: '0xf217C314E3F75b8477Ab12A765d16B6Dbcd13b39',
+    data: ''
+  },
+  receipt: TransactionReceipt {
+    provider: HardhatEthersProvider {
+      _hardhatProvider: [LazyInitializationProviderAdapter],
+      _networkName: 'hoodi',
+      _blockListeners: [],
+      _transactionHashListeners: Map(0) {},
+      _eventListeners: [],
+      _isHardhatNetworkCached: false,
+      _latestBlockNumberPolled: 399843,
+      _blockPollingTimeout: undefined,
+      _transactionHashPollingTimeout: undefined
+    },
+    to: '0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4',
+    from: '0xf217C314E3F75b8477Ab12A765d16B6Dbcd13b39',
+    contractAddress: null,
+    hash: '0x0f108ed71a38a690be75f2b2e411595e3a9979a75116594b09f1c7d38e612178',
+    index: 7,
+    blockHash: '0x841240c9b1ef4f7c03b0cd02c548e07639314e7aa590b90499d1fab25b3167cb',
+    blockNumber: 399844,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+    gasUsed: 970776n,
+    blobGasUsed: undefined,
+    cumulativeGasUsed: 1250098n,
+    gasPrice: 1108987840n,
+    blobGasPrice: undefined,
+    type: 2,
+    status: 0,
+    root: undefined
+  },
+  shortMessage: 'transaction execution reverted'
+}
+Test 3 failed, continuing with zero LP1 balance
+
+� Test 4: Second LP Provider Adds Liquidity
+LP2 BLX balance: 4500.0
+LP2 WETH balance: 36.1
+LP2 BLX allowance: 0.0
+LP2 WETH allowance: 0.0
+LP2 balance before: 0.0
+Current reserves: 0.0 token0 0.0 token1
+No reserves in pool, using initial amounts
+Second LP add liquidity failed: Error: transaction execution reverted (action="sendTransaction", data=null, reason=null, invocation=null, revert=null, transaction={ "data": "", "from": "0x20d8F0811CF1D1A7Cb650bFABcf4E25C46657f12", "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": null, "blockHash": "0x0944c2027e1b6e0255614c7821c74bc5fdb02651bbc04f76bed870a87251a90b", "blockNumber": 399846, "contractAddress": null, "cumulativeGasUsed": "1008225", "from": "0x20d8F0811CF1D1A7Cb650bFABcf4E25C46657f12", "gasPrice": "1097455729", "gasUsed": "970776", "hash": "0xceadadd3ed0c6fcf74ab33b5ca84d5d53be0e467efe463caf62e061e72a374ae", "index": 1, "logs": [  ], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4" }, code=CALL_EXCEPTION, version=6.14.0)
+    at makeError (D:\uniquecrypto\test1 - Copy\node_modules\ethers\src.ts\utils\errors.ts:694:21)
+    at assert (D:\uniquecrypto\test1 - Copy\node_modules\ethers\src.ts\utils\errors.ts:715:25)
+    at checkReceipt (D:\uniquecrypto\test1 - Copy\node_modules\ethers\src.ts\providers\provider.ts:1607:19)
+    at txListener (D:\uniquecrypto\test1 - Copy\node_modules\ethers\src.ts\providers\provider.ts:1657:33)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  code: 'CALL_EXCEPTION',
+  action: 'sendTransaction',
+  data: null,
+  reason: null,
+  invocation: null,
+  revert: null,
+  transaction: {
+    to: '0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4',
+    from: '0x20d8F0811CF1D1A7Cb650bFABcf4E25C46657f12',
+    data: ''
+  },
+  receipt: TransactionReceipt {
+    provider: HardhatEthersProvider {
+      _hardhatProvider: [LazyInitializationProviderAdapter],
+      _networkName: 'hoodi',
+      _blockListeners: [],
+      _transactionHashListeners: Map(0) {},
+      _eventListeners: [],
+      _isHardhatNetworkCached: false,
+      _latestBlockNumberPolled: 399843,
+      _blockPollingTimeout: undefined,
+      _transactionHashPollingTimeout: undefined
+    },
+    to: '0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4',
+    from: '0x20d8F0811CF1D1A7Cb650bFABcf4E25C46657f12',
+    contractAddress: null,
+    hash: '0xceadadd3ed0c6fcf74ab33b5ca84d5d53be0e467efe463caf62e061e72a374ae',
+    index: 1,
+    blockHash: '0x0944c2027e1b6e0255614c7821c74bc5fdb02651bbc04f76bed870a87251a90b',
+    blockNumber: 399846,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+    gasUsed: 970776n,
+    blobGasUsed: undefined,
+    cumulativeGasUsed: 1008225n,
+    gasPrice: 1097455729n,
+    blobGasPrice: undefined,
+    type: 2,
+    status: 0,
+    root: undefined
+  },
+  shortMessage: 'transaction execution reverted'
+}
+Test 4 failed, continuing with zero LP2 balance
+
+� Test 5: LP Token Ownership
+No LP tokens issued, skipping ownership check
+
+� Test 6: Generate Trading Fees
+Funding Trader 1 with ETH...
+Trader 1 new ETH balance: 1.0
+Funding Trader 2 with ETH...
+Trader 2 new ETH balance: 1.0
+Reserves before trades: 0.0 : 0.0
+Traders received WETH
+Trader 1 swapped WETH for BLX
+Trader 2 swapped WETH for BLX
+Trader 1 swapped BLX for WETH
+Reserves after trades: 0.0 : 0.0
+
+� Test 7: Fee Accumulation                                                                              
+Protocol fee receiver: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73                                       
+Protocol fees collected (WETH): 0.0                                                                     
+No fees generated (empty pool)                                                                          
+                                                                                                        
+� Test 8: Remove Liquidity and Collect Fees                                                             
+LP1 has no liquidity tokens, skipping removal                                                           
+                                                                                                        
+� Test 9: Calculate Fee Earnings                                                                        
+                                                                                                        
+� Test 10: LP Token Transfer                                                                            
+LP2 has insufficient LP tokens, skipping transfer                                                       
+                                                                                                        
+✅ LP token and fee distribution tests completed!                                                        

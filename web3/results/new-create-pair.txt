@@ -1,0 +1,38 @@
+D:\uniquecrypto\test1 - Copy (master -> origin) (test1@1.0.0)
+λ npx hardhat run scripts/deploy-fixed-pair.js --network hoodi
+� Deploying Fixed BlumeSwapPair Contract...
+==================================================
+Deploying with account: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+
+1️⃣ Deploying new BlumeSwapPair contract...
+✅ New BlumeSwapPair deployed at: 0x0eD070F4c63a769F8179665A832446cd94B83528
+
+2️⃣ Initializing the new pair contract...
+✅ Pair initialized with tokens
+
+3️⃣ Setting up price oracle...
+✅ Price oracle set
+
+4️⃣ Setting max price deviation to 50% for testing...
+✅ Max price deviation set to 50%
+
+5️⃣ Updating factory mapping...
+⚠️ Could not update factory mapping: BlumeSwapFactory.updatePair is not a function
+� You might need to update router to use the new pair address directly
+
+✅ DEPLOYMENT COMPLETE!
+==================================================
+� Updated Configuration:
+Old BLX_WETH_Pair: 0x7aB182A1a90bcDb426BD3284bCF45641a254590e
+New BLX_WETH_Pair: 0x0eD070F4c63a769F8179665A832446cd94B83528
+
+� Next Steps:
+1. Update your test script with the new pair address
+2. Update your configuration file
+3. Run the tests to verify the fix
+
+� Verifying deployment...
+Token0: 0x0000000000000000000000000000000000000000
+Token1: 0x0000000000000000000000000000000000000000
+Oracle: 0x0000000000000000000000000000000000000000
+Max Deviation: 1000bp

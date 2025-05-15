@@ -1,0 +1,148 @@
+D:\uniquecrypto\test1 - Copy (master) (test1@1.0.0)
+λ npx hardhat run scripts/test/price-oracle.js --network hoodi
+Using account: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+
+� STARTING COMPLETE BLUME ECOSYSTEM TEST SUITE
+================================================================================
+
+================================================================================
+� SETTING UP PRICE ORACLE
+==================================================
+Setting BLX price to $10.00...
+BLX price set to $10.00 (tx: 0xedb121b00d1b10e3440978eb398b2fb9319340d6ade8b9cca1327adf9850014f)
+✓ BLX price set to $10.00 confirmed (gas used: 70306)
+
+Setting WETH price to $3000.00...
+WETH price set to $3000.00 (tx: 0xbb01528a7e7d1200bbc3c36d058cada8ef4ad173cd710a4afb6c67eed9c6b89e)
+✓ WETH price set to $3000.00 confirmed (gas used: 70318)
+
+✓ BLX Price: $10.0
+✓ WETH Price: $3000.0
+
+Setting price oracle for BLX-WETH pair...
+Price oracle set for pair (tx: 0x8c42c9127536205f5ea51e1faf3c61cbe5e35d1efc9d1869ee1e3ff3fd0b0a01)
+✓ Price oracle set for pair confirmed (gas used: 45016)
+
+Setting max price deviation to 50%...
+⚠️ Could not set max price deviation: execution reverted: BlumeSwap: DEVIATION_TOO_HIGH
+✅ Price Oracle Setup - PASSED
+
+================================================================================
+� TESTING TOKEN OPERATIONS
+==================================================
+Initial BLX balance: 1010008992974349.000000009 BLX
+Minting 10,000 BLX tokens...
+Minted 10,000 BLX tokens (tx: 0x51bd3982ee2290085289bfe0e1f0ffb43bdd25e2265188a11f825432e3d27271)
+✓ Minted 10,000 BLX tokens confirmed (gas used: 39602)
+
+New BLX balance: 1010008992984349.000000009 BLX
+
+✅ Token Operations - PASSED
+
+================================================================================
+� TESTING DEX OPERATIONS
+==================================================
+Approving BLX for router...
+BLX approved for router (tx: 0xce1f790532d706649ed2c73df43185f447d1cdcec28a8cf1ae61f332f479326a)
+✓ BLX approved for router confirmed (gas used: 47022)
+
+
+==================================================
+� TESTING MINIMUM LIQUIDITY HYPOTHESIS
+==================================================
+Attempting to add minimal liquidity to establish pool...
+Adding minimal liquidity: 1 BLX + 0.00333 ETH
+Minimal liquidity added successfully (tx: 0xcbb40a5f0b6c6c24aaf862a49d636a9cb894f21ca014ef96215dc7a8e02f394e)
+✓ Minimal liquidity added successfully confirmed (gas used: 300747)
+
+New reserves - Reserve0: 0.0, Reserve1: 0.0
+LP balance: 0.0
+
+Final reserves - Reserve0: 0.0, Reserve1: 0.0
+LP token balance: 0.0
+
+✅ DEX Operations - PASSED
+
+================================================================================
+� TESTING REGULAR STAKING
+==================================================
+Approving BLX for regular staking...
+BLX approved for staking (tx: 0x02c9844907992f0eee09e28c97a3c8f888738d5c5412ea485430a5e6f3eae319)
+✓ BLX approved for staking confirmed (gas used: 47010)
+
+Staking 500 BLX...
+500 BLX staked (tx: 0xa3f4ff29deed5e10a70e6cdf974d7a446700c9d5a238e5a05415dcc028673b74)
+✓ 500 BLX staked confirmed (gas used: 162370)
+
+Checking user tier...
+User Tier: Silver (Index: 1)
+Min Stake: 1000.0 BLX
+Multiplier: 12500bp (125%)
+Pending rewards: 0.0 BLX
+
+✅ Regular Staking - PASSED
+
+================================================================================
+� TESTING LIQUID STAKING
+==================================================
+Updating liquid staking exchange rate...
+Exchange rate updated (tx: 0x8d6b51e1d9e0c223340d54df174ef8f75e529b286b27d1512c8d3bee9390aaf6)
+✓ Exchange rate updated confirmed (gas used: 28403)
+
+Approving BLX for liquid staking...
+BLX approved for liquid staking (tx: 0xa04ae60ef56ea34082ee96806136d676458354a44ad4feb444dd5db64ca06e25)✓ BLX approved for liquid staking confirmed (gas used: 47010)
+
+Liquid staking 1000 BLX for stBLX (30-day tier)...
+1000 BLX liquid staked (tx: 0x6f57140cc5344c9aaa89bc38d4062bc7c4074354dfd50630a19894a984a7d200)
+✓ 1000 BLX liquid staked confirmed (gas used: 244779)
+
+stBLX balance: 0.0 stBLX
+Staked amount: 1000.0 BLX
+Lock end: 13/8/2025, 11:27:24 pm
+Lock duration: 7776000 seconds
+Multiplier: 13000bp
+Pending rewards: 0.0 BLX
+
+✅ Liquid Staking - PASSED
+
+================================================================================
+�️ TESTING VAULT OPERATIONS
+==================================================
+Approving BLX for vault...
+BLX approved for vault (tx: 0x540db0fbc740de315e8b2dd4d26ae9e01f6dd32623737c842cf7e54d2e1df5cf)
+✓ BLX approved for vault confirmed (gas used: 47010)
+
+Depositing 500 BLX to vault (no lock)...
+500 BLX deposited to vault (tx: 0x9354ea672704ba505963bb20f1bbbd9df16d8f803411d565b77d770e775fbce0)
+✓ 500 BLX deposited to vault confirmed (gas used: 178416)
+
+Pending vault rewards: 0.0 BLX
+Effective APY: 800bp (8%)
+
+✅ Vault Operations - PASSED
+
+================================================================================
+↩️ TESTING REMOVE LIQUIDITY
+==================================================
+Current LP balance: 0.0 LP
+No LP tokens to remove
+
+✅ Remove Liquidity - PASSED
+
+================================================================================
+� FINAL STATUS CHECK
+==================================================
+Final BLX balance: 1010008992982348.000000009 BLX
+Final stBLX balance: 0.0 stBLX
+Final LP balance: 0.0 LP
+Final ETH balance: 80.475546402893261017 ETH
+Final pool reserves - Reserve0: 0.0, Reserve1: 0.0
+
+✅ Final Status - PASSED
+
+================================================================================
+� TEST SUITE COMPLETE
+Tests passed: 8/8
+Duration: 162.727s
+Success rate: 100.0%
+================================================================================

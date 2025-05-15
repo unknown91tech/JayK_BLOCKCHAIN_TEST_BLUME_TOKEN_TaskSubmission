@@ -1,0 +1,125 @@
+D:\uniquecrypto\test1 - Copy (master) (test1@1.0.0)
+λ npx hardhat run scripts/test/attacks.js --network hoodi
+� Starting Security Analysis of Blume Ecosystem Contracts...
+
+� Analyzing Reentrancy Protection...
+
+� Analyzing Flash Loan Protection...
+
+� Analyzing Integer Overflow/Underflow Protection...
+
+� Analyzing Oracle Security...
+
+� Analyzing Access Control...
+
+� Analyzing Gas Optimization...
+
+� Analyzing General Security Measures...
+
+� SECURITY ANALYSIS REPORT
+==================================================
+
+� Reentrancy Protection:
+   ✅ Passed: 8
+   ❌ Failed: 0
+   ✅ BlumeStaking.sol: Uses ReentrancyGuard with nonReentrant modifier
+   ✅ BlumeStakingHub.sol: Uses ReentrancyGuard with nonReentrant modifier
+   ✅ BlumeVault.sol: Uses ReentrancyGuard with nonReentrant modifier
+   ✅ BlumeVaultController.sol: Uses ReentrancyGuard with nonReentrant modifier
+   ✅ BlumeYieldFarmer.sol: Uses ReentrancyGuard with nonReentrant modifier
+   ✅ BlumeSwapPair.sol: Uses ReentrancyGuard with nonReentrant modifier
+   ✅ BlumeSwapRouter.sol: Uses ReentrancyGuard with nonReentrant modifier
+   ✅ BlumeStakingDeFiIntegration.sol: Uses ReentrancyGuard with nonReentrant modifier
+
+� Flash Loan Protection:
+   ✅ Passed: 2
+   ❌ Failed: 1
+   ✅ BlumeSwapPair.sol: Implements flash loan protection measures
+   ❌ BlumeSwapRouter.sol: May be vulnerable to flash loan attacks
+   ✅ PriceOracle.sol: Implements flash loan protection measures
+
+� Integer Overflow Protection:
+   ✅ Passed: 13
+   ❌ Failed: 0
+   ✅ BlumeToken.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ BlumeStaking.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ℹ️  BlumeStaking.sol: Contains unchecked blocks - verify they're intentional
+   ✅ BlumeStakingHub.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ℹ️  BlumeStakingHub.sol: Contains unchecked blocks - verify they're intentional
+   ✅ BlumeStakingDeFiIntegration.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ BlumeVault.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ BlumeVaultController.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ BlumeYieldFarmer.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ BlumeSwapFactory.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ BlumeSwapPair.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ BlumeSwapRouter.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ PriceOracle.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ StakedBlumeToken.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+   ✅ WETH.sol: Uses Solidity ^0.8.20 with built-in overflow protection
+
+� Oracle Security:
+   ✅ Passed: 2
+   ❌ Failed: 1
+   ✅ PriceOracle.sol: Implements Staleness check, Price validation
+   ✅ BlumeSwapPair.sol: Implements Price validation, Circuit breaker
+   ❌ MockPriceVerifier.sol: Insufficient oracle protection (Price validation)
+
+� Access Control:
+   ✅ Passed: 10
+   ❌ Failed: 3
+   ✅ BlumeToken.sol: Uses AccessControl with proper role-based access
+   ✅ BlumeStaking.sol: Uses AccessControl with proper role-based access
+   ✅ BlumeStakingHub.sol: Uses AccessControl with proper role-based access
+   ✅ BlumeStakingDeFiIntegration.sol: Uses AccessControl with proper role-based access
+   ✅ BlumeVault.sol: Uses AccessControl with proper role-based access
+   ✅ BlumeVaultController.sol: Uses AccessControl with proper role-based access
+   ✅ BlumeYieldFarmer.sol: Uses AccessControl with proper role-based access
+   ✅ BlumeSwapFactory.sol: Uses AccessControl with proper role-based access
+   ❌ BlumeSwapPair.sol: Missing proper access control mechanisms
+   ❌ BlumeSwapRouter.sol: Missing proper access control mechanisms
+   ✅ PriceOracle.sol: Uses AccessControl with proper role-based access
+   ✅ StakedBlumeToken.sol: Uses AccessControl with proper role-based access
+   ❌ WETH.sol: Missing proper access control mechanisms
+
+� Gas Optimization:
+   ✅ Passed: 13
+   ❌ Failed: 0
+   ✅ BlumeToken.sol: Implements Events for state changes, Optimized storage
+   ✅ BlumeStaking.sol: Implements Events for state changes, Optimized storage, Unchecked arithmetic
+   ✅ BlumeStakingHub.sol: Implements Events for state changes, Optimized storage, Immutable variables,
+Unchecked arithmetic
+   ✅ BlumeStakingDeFiIntegration.sol: Implements Events for state changes, Optimized storage
+   ✅ BlumeVault.sol: Implements Events for state changes, Optimized storage
+   ✅ BlumeVaultController.sol: Implements Events for state changes, Optimized storage
+   ✅ BlumeYieldFarmer.sol: Implements Events for state changes, Optimized storage, Immutable variables
+   ✅ BlumeSwapFactory.sol: Implements Events for state changes, Optimized storage
+   ✅ BlumeSwapPair.sol: Implements Events for state changes, Optimized storage
+   ✅ BlumeSwapRouter.sol: Implements Events for state changes, Optimized storage, Immutable variables
+   ✅ PriceOracle.sol: Implements Events for state changes, Optimized storage
+   ✅ StakedBlumeToken.sol: Implements Events for state changes, Optimized storage
+   ✅ WETH.sol: Implements Events for state changes, Optimized storage
+
+� General Security:
+   ✅ Passed: 13
+   ❌ Failed: 0
+   ✅ BlumeToken.sol: Input validation, Pause functionality
+   ✅ BlumeStaking.sol: Input validation
+   ✅ BlumeStakingHub.sol: Input validation
+   ✅ BlumeStakingDeFiIntegration.sol: Input validation, Emergency functions
+   ✅ BlumeVault.sol: Input validation
+   ✅ BlumeVaultController.sol: Input validation
+   ✅ BlumeYieldFarmer.sol: Input validation
+   ✅ BlumeSwapFactory.sol: Input validation
+   ✅ BlumeSwapPair.sol: Input validation
+   ✅ BlumeSwapRouter.sol: Input validation
+   ✅ PriceOracle.sol: Input validation
+   ✅ StakedBlumeToken.sol: Input validation
+   ✅ WETH.sol: Input validation
+
+� OVERALL SUMMARY:
+   ✅ Total Passed: 61
+   ❌ Total Failed: 5
+   � Success Rate: 92.4%
+
+� SECURITY RECOMMENDATIONS:
+==================================================
