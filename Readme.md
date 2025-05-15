@@ -108,20 +108,6 @@ npm run dev
 cd JayK_BLOCKCHAIN_TEST_BLUME_TOKEN_TaskSubmission/web3
 ```
 
-2. Set up environment variables by creating a `.env` file:
-```
-ETHERSCAN_API_KEY=your_etherscan_key
-REPORT_GAS=false
-PRIVATE_KEY=
-HOODI_URL=
-SEPOLIA_URL=
-```
-
-3. Install security analysis tools (optional):
-```bash
-pip install slither-analyzer
-pip install mythril
-```
 
 ## 💻 Usage
 
