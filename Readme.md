@@ -5,7 +5,6 @@ A comprehensive decentralized finance (DeFi) dashboard application built with Re
 ## 📋 Features
 
 - **Wallet Connection**: Secure integration with MetaMask and other Ethereum wallets
-- **Network Support**: Multi-chain support (Ethereum, Polygon, BNB Chain, Arbitrum, Optimism)
 - **Token Swapping**: Decentralized exchange for swapping tokens
 - **Liquidity Pools**: Add and remove liquidity from pools
 - **Staking**: Token staking with multiple lock periods and yield rates
@@ -25,20 +24,20 @@ The project consists of several integrated components:
 - ShadCN UI component library
 
 ### Smart Contracts
-- Blume Token (BLX): ERC-20 token with anti-whale and anti-bot mechanisms
-- BlumeSwap: Decentralized exchange with AMM (Automated Market Maker)
-- BlumeStaking: Token staking with tiered rewards
-- BlumeVault: Yield generation and auto-compounding
+- **Blume Token (BLX)**: ERC-20 token with anti-whale and anti-bot mechanisms
+- **BlumeSwap**: Decentralized exchange with AMM (Automated Market Maker)
+- **BlumeStaking**: Token staking with tiered rewards
+- **BlumeVault**: Yield generation and auto-compounding
 
 ### Tools and Utilities
-- Price Oracle: Real-time price data integration
-- Yield Farming: Auto-compounding strategies
-- Gas Optimization: Efficient transaction handling
+- **Price Oracle**: Real-time price data integration
+- **Yield Farming**: Auto-compounding strategies
+- **Gas Optimization**: Efficient transaction handling
 
 ## 📁 Project Structure
 
 ```
-/
+/ 
 ├── contracts/                  # Smart contract source files
 │   ├── BlumeToken.sol          # Core BLX token implementation
 │   ├── BlumeSwapFactory.sol    # DEX factory contract
@@ -74,6 +73,7 @@ The project consists of several integrated components:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - npm or yarn
 - MetaMask or similar Web3 wallet
@@ -84,51 +84,58 @@ The project consists of several integrated components:
 #### Frontend Setup
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/unknown91tech/JayK_BLOCKCHAIN_TEST_BLUME_TOKEN_TaskSubmission.git
 cd JayK_BLOCKCHAIN_TEST_BLUME_TOKEN_TaskSubmission/frontend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. Open your browser and navigate to http://localhost:5173
 
 #### Smart Contract Development Setup
 
-1. Install smart contract development dependencies:
+Install smart contract development dependencies:
+
 ```bash
 cd JayK_BLOCKCHAIN_TEST_BLUME_TOKEN_TaskSubmission/web3
 ```
 
-
 ## 💻 Usage
 
 ### Connecting Your Wallet
+
 1. Click on the "Connect Wallet" button in the header
 2. Select your preferred wallet (MetaMask, etc.)
 3. Approve the connection request in your wallet
 
 ### Swapping Tokens
+
 1. Navigate to the "Swap" tab
 2. Select the tokens you want to swap between
 3. Enter the amount to swap
 4. Click "Swap" and confirm the transaction in your wallet
 
 ### Adding Liquidity
+
 1. Navigate to the "Liquidity" tab
 2. Select the token pair you want to provide liquidity for
 3. Enter the amounts for each token
 4. Click "Add Liquidity" and confirm the transaction
 
 ### Staking
+
 1. Navigate to the "Contracts" tab
 2. Select the staking contract
 3. Enter the amount to stake and the lock period
@@ -137,23 +144,44 @@ cd JayK_BLOCKCHAIN_TEST_BLUME_TOKEN_TaskSubmission/web3
 ## 🧪 Testing
 
 The smart contracts include comprehensive test suites for:
+
 - Security features (reentrancy protection, access control)
 - Math safety (overflow/underflow protection)
 - Gas optimization
 - Price oracle integrity
 
-
 ### Running Individual Scripts
 
-You can run specific test suites to check individual contract functionality:
+Before running individual scripts, you need to configure your private keys:
 
-For example:
+1. Open `hardhat.config.js` in the web3 directory
+2. Add your private key to the network configuration:
+
+```javascript
+networks: {
+  hoodi: {
+      url: process.env.HOODI_URL || "",
+      chainId: 560048,
+      // accounts: [
+      //   "your_private_key_1", // Owner: 10,000 ETH
+      //   "your_private_key_2", // Whale
+      //   "your_private_key_3", // Bot
+      //   "your_private_key_4",
+      //   "your_private_key_5",  // Normal User
+      // ]
+    }
+}
+```
+
+3. Open `scripts/test/test-blume-token.js`
+4. Add your private key or wallet configuration as needed for the test script
+5. Run the script using:
 
 ```bash
-# Run token tests
-npx hardhat run scripts/test/eco=system.js --network hoodi
-
+npx hardhat run scripts/test/eco-system.js --network hoodi
 ```
+
+**Note**: Never commit private keys to version control. Use environment variables or a secure configuration method in production.
 
 ### Running Individual Tests
 
@@ -193,40 +221,62 @@ npx hardhat test test/GasOptimization.test.js
 Execute the test-all.sh script to run all tests and analysis tools:
 
 ```bash
-./test-all.sh
+./run-all.sh
 ```
 
 This will:
-1. Run all Hardhat tests
-2. Generate test coverage reports
-3. Run Slither static analysis (if installed)
-4. Run Mythril security analysis (if installed)
-5. Generate gas usage reports
+- Run all Hardhat tests
+- Generate test coverage reports
+- Run Slither static analysis (if installed)
+- Run Mythril security analysis (if installed)
+- Generate gas usage reports
 
 ### Reviewing Test Results
 
 After running the tests, check:
-1. Test output for any failures
-2. Coverage report (in the `coverage/` directory)
-3. Slither reports (in the `slither-reports/` directory)
-4. Mythril reports (in the `mythril-reports/` directory)
-5. Gas reporter output in the console
+- Test output for any failures
+- Coverage report (in the `coverage/` directory)
+- Slither reports (in the `slither-reports/` directory)
+- Mythril reports (in the `mythril-reports/` directory)
+- Gas reporter output in the console
 
 ## 📦 Contract Addresses
 
-### Mainnet
-- BlumeToken: `0x3787831C45898677A07426b51EA3053c8DB32Dd4`
-- WETH: `0x2f9aAd71531651432deCB6f34f0d124F7136227A`
-- BlumeSwapFactory: `0xD4F55d0Ad19c3BE0A7D5EE7e0512a00129Cd73c9`
-- BlumeSwapRouter: `0x56E525384313947106bd3BF0555d15510C6E0326`
-- PriceOracle: `0xb185335531Fd45Ca58E693a9ADebE0c00c074f72`
-- BlumeStaking: `0xD4F9Aa9F4Efe75c63877223EC43039F7958499bE`
-- BlumeStakingHub: `0x5308b68C9c64C8D1d055Ee8F538156C8038C34c0`
-- StakedBlumeToken: `0x18926Bc1d53f6C756c18a46Da5F4860784F2B650`
-- BlumeVault: `0x1435870A6152825Bc9043829C376fc2EEBcA770A`
+### Testnet (Hoodi)
 
-### Testnet
-- Refer to the `/deployment-hoodi-1746264850.json` file for the latest testnet addresses
+```
+Network: Hoodi
+Timestamp: 2025-05-03T09:34:10.100Z
+Deployer: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+
+Contracts:
+BlumeToken: 0x8CBabC07717038DA6fAf1bC477a39F1627988a3a
+WETH: 0x17a8eabD12bCEb2fBD0789E8063BcD42325CA4CA
+BlumeSwapFactory: 0xb86D27c3736062132879E743c7648093F500fb7e
+BlumeSwapRouter: 0x40cDf70E2364b69AA5e00189A4f1BE631a351Ec4
+FixedPriceOracle: 0xBa597F46Cadashop7A8eAbbcb7E63EcEB9957B1f7688
+BlumeStaking: 0xA8a69ce8C3657BA48d40a8F93aF3a743c45b96D0
+BlumeStakingHub: 0x36febc9a715B86c87429C671f596B30ad38Bf580
+StakedBlumeToken: 0x2f1473c53163A24439Dc48E994c8A5d0E3B8B98B
+BlumeStakingHubFactory: 0x9C2b2bc3357D64bBa3471547C5a33D58E42550ea
+BlumeVault: 0x9cc370104fF1D80c0986471aAC407A4025CA038C
+BlumeVaultController: 0x263c05A4B4348Cb0B74db5b3e85174532209c5BA
+BLX_WETH_Pair: 0x9cAFb45c2f4B06d68A30179Fd103c735B2338150
+BlumeStakingDeFiIntegration: 0x9d09e7E7F265dc6a6Ca8CB14aC973cA411b64b42
+BlumeYieldFarmer: 0xf9fa9fFF3896A97AC50247062C7843DD78F2c0B7
+```
+
+### Configuration
+
+```
+Initial Supply: 0x52b7d2dcc80cd2e4000000 (BigNumber)
+Reward Rate: 500
+Protocol Fee: 300
+Yield Rate: 800
+Compound Frequency: 86400 seconds
+Max Price Deviation: 300
+Verify Contracts: False
+```
 
 ## 🛡️ Security Features
 
@@ -250,6 +300,7 @@ The DeFi portal follows a modular architecture:
 ## 🛠️ Development
 
 ### Project Structure
+
 ```
 defi-portal/
 ├── src/
@@ -269,5 +320,3 @@ defi-portal/
 ├── test/                   # Contract test suites
 └── deployment/             # Deployment scripts and config
 ```
-
-I also have shared my own logs for the test inside the personal folder inside the web3 folder.
